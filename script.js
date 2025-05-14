@@ -19,7 +19,7 @@ const gameScenes = [
         showBackward: true,
         audio: 'audio/scene1.mp3',
         useTypewriter: true,
-        typewriterSpeed: 10  // Speed in milliseconds (lower = faster)
+        typewriterSpeed: 30  // Speed in milliseconds (lower = faster)
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ const gameScenes = [
         showBackward: true,
         audio: 'audio/scene2.mp3',
         useTypewriter: true,
-        typewriterSpeed: 10
+        typewriterSpeed: 20
     },
     {
         id: 4,
@@ -41,7 +41,7 @@ const gameScenes = [
         showBackward: true,
         audio: 'audio/scene3.mp3',
         useTypewriter: true,
-        typewriterSpeed: 10
+        typewriterSpeed: 25
     },
     {
         id: 5,
@@ -52,7 +52,7 @@ const gameScenes = [
         showBackward: true,
         audio: 'audio/scene4.mp3',
         useTypewriter: true,
-        typewriterSpeed: 10
+        typewriterSpeed: 20
     },
     {
         id: 6,
@@ -63,7 +63,7 @@ const gameScenes = [
         showBackward: true,
         audio: 'audio/scene5.mp3',
         useTypewriter: true,
-        typewriterSpeed: 10
+        typewriterSpeed: 20
     },
     {
         id: 7,
@@ -99,7 +99,7 @@ const gameScenes = [
         showBackward: false,
         audio: 'audio/scene7.mp3',
         useTypewriter: true,
-        typewriterSpeed: 10
+        typewriterSpeed: 30
     },
     {
         id: 10,
@@ -110,7 +110,7 @@ const gameScenes = [
         showBackward: false,
         audio: 'audio/scene8.mp3',
         useTypewriter: true,
-        typewriterSpeed: 10
+        typewriterSpeed: 30
     },
     {
         id: 11,
@@ -141,8 +141,8 @@ const gameScenes = [
         showForward: true,
         showBackward: false,
         audio: 'audio/scene10.mp3',
-        useTypewriter: true
-        
+        useTypewriter: true,
+        typewriterSpeed: 30
     },
     {
         id: 14,
@@ -152,7 +152,8 @@ const gameScenes = [
         showForward: true,
         showBackward: false,
         audio: 'audio/scene11.mp3',
-        useTypewriter: true
+        useTypewriter: true,
+        typewriterSpeed: 30
     },
     {
         id: 15,
