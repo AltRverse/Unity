@@ -17,9 +17,9 @@ const gameScenes = [
         showControls: true,
         showForward: true,
         showBackward: true,
-        audio: 'audio/scene1.mp3',
+        audio: 'audio/narration.mp3',
         useTypewriter: true,
-        typewriterSpeed: 30  // Speed in milliseconds (lower = faster)
+        typewriterSpeed: 35  // Speed in milliseconds (lower = faster)
     },
     {
         id: 3,
@@ -28,9 +28,9 @@ const gameScenes = [
         showControls: true,
         showForward: true,
         showBackward: true,
-        audio: 'audio/scene2.mp3',
+        audio: 'audio/scene1.mp3',
         useTypewriter: true,
-        typewriterSpeed: 20
+        typewriterSpeed: 30
     },
     {
         id: 4,
@@ -39,9 +39,9 @@ const gameScenes = [
         showControls: true,
         showForward: true,
         showBackward: true,
-        audio: 'audio/scene3.mp3',
+        audio: 'audio/scene2.mp3',
         useTypewriter: true,
-        typewriterSpeed: 25
+        typewriterSpeed: 35
     },
     {
         id: 5,
@@ -50,9 +50,9 @@ const gameScenes = [
         showControls: true,
         showForward: true,
         showBackward: true,
-        audio: 'audio/scene4.mp3',
+        audio: 'audio/scene3.mp3',
         useTypewriter: true,
-        typewriterSpeed: 20
+        typewriterSpeed: 30
     },
     {
         id: 6,
@@ -61,9 +61,9 @@ const gameScenes = [
         showControls: true,
         showForward: true,
         showBackward: true,
-        audio: 'audio/scene5.mp3',
+        audio: 'audio/scene4.mp3',
         useTypewriter: true,
-        typewriterSpeed: 20
+        typewriterSpeed: 30
     },
     {
         id: 7,
@@ -84,7 +84,7 @@ const gameScenes = [
         showControls: true,
         showForward: false,
         showBackward: true,
-        audio: 'null',
+        audio: 'audio/choice.mp3',
         choices: [
             { text: "Should I advise the Pandavas to prevent war and guide them toward peace over bloodshed?", nextScene: 9 },
             { text: "Or should I let destiny unfold as it must? For I have seen that the war may be inevitable", nextScene: 13 }
@@ -97,9 +97,9 @@ const gameScenes = [
         showControls: true,
         showForward: true,
         showBackward: false,
-        audio: 'audio/scene7.mp3',
+        audio: 'audio/A1.mp3',
         useTypewriter: true,
-        typewriterSpeed: 30
+        typewriterSpeed: 40
     },
     {
         id: 10,
@@ -108,11 +108,11 @@ const gameScenes = [
         showControls: true,
         showForward: true,
         showBackward: false,
-        audio: 'audio/scene8.mp3',
+        audio: 'audio/A2.mp3',
         useTypewriter: true,
-        typewriterSpeed: 30
+        typewriterSpeed: 40
     },
-    {
+    { //Branch A wisdom
         id: 11,
         description: "",
         image: '10.png',
@@ -122,7 +122,7 @@ const gameScenes = [
         audio: 'audio/scene9.mp3',
         useTypewriter: false
     },
-    {
+    { //Branch A Shlok
         id: 12,
         description: "",
         image: '11.png',
@@ -140,9 +140,9 @@ const gameScenes = [
         showControls: true,
         showForward: true,
         showBackward: false,
-        audio: 'audio/scene10.mp3',
+        audio: 'audio/B1.mp3',
         useTypewriter: true,
-        typewriterSpeed: 30
+        typewriterSpeed: 35
     },
     {
         id: 14,
@@ -151,11 +151,11 @@ const gameScenes = [
         showControls: true,
         showForward: true,
         showBackward: false,
-        audio: 'audio/scene11.mp3',
+        audio: 'audio/B2.mp3',
         useTypewriter: true,
-        typewriterSpeed: 30
+        typewriterSpeed: 40
     },
-    {
+    { //Branch B wisdom
         id: 15,
         description: "",
         image: '14.png',
@@ -164,7 +164,7 @@ const gameScenes = [
         showBackward: false,
         audio: 'audio/scene13.mp3'
     },
-    {
+    { //Branch B Shlok
         id: 16,
         description: "",
         image: '15.png',
