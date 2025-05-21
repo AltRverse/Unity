@@ -19,7 +19,7 @@ const gameScenes = [
         showBackward: true,
         audio: 'audio/narration.mp3',
         useTypewriter: true,
-        typewriterSpeed: 10  // Speed in milliseconds (lower = faster)
+        typewriterSpeed: 20  // Speed in milliseconds (lower = faster)
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ const gameScenes = [
         showBackward: true,
         audio: 'audio/scene1.mp3',
         useTypewriter: true,
-        typewriterSpeed: 10
+        typewriterSpeed: 20
     },
     {
         id: 4,
