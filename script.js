@@ -19,7 +19,7 @@ const gameScenes = [
         showBackward: true,
         audio: 'audio/narration.mp3',
         useTypewriter: true,
-        typewriterSpeed: 30  // Speed in milliseconds (lower = faster)
+        typewriterSpeed: 10  // Speed in milliseconds (lower = faster)
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ const gameScenes = [
         showBackward: true,
         audio: 'audio/scene1.mp3',
         useTypewriter: true,
-        typewriterSpeed: 30
+        typewriterSpeed: 10
     },
     {
         id: 4,
@@ -440,9 +440,7 @@ function updateSceneContent() {
         playAgainBtn.className = 'play-again-btn';
         playAgainBtn.textContent = 'Play Again';
         playAgainBtn.addEventListener('click', () => {
-            currentSceneIndex = 0;
-            visitedScenes.clear();
-            handleSceneTransition(0);
+            window.location.href = 'index.html';  // Redirect to index.html
         });
         choicesContainer.style.display = 'flex';
         choicesContainer.appendChild(playAgainBtn);

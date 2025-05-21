@@ -69,6 +69,10 @@ body.fade::before {
     box-sizing: border-box;
 }
 
+.story-content:empty {
+    display: none;
+}
+
 .story-content.fade {
     opacity: 0;
 }
@@ -106,6 +110,14 @@ body.fade::before {
     word-break: keep-all;
     overflow-wrap: normal;
     hyphens: none;
+}
+
+.scene-description:empty {
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    padding: 0;
 }
 
 .scene-description.typewriter {
