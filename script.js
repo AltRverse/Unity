@@ -178,12 +178,103 @@ const gameScenes = [
     // Add more scenes as needed
 ];
 
+// Preload all assets
+const assetsToPreload = [
+    // Background images
+    'images/background1.png',
+    'images/background2.png',
+    'images/2.png',
+    'images/3.png',
+    'images/4.png',
+    'images/5.png',
+    'images/6.png',
+    'images/8.png',
+    'images/9.png',
+    'images/10.png',
+    'images/11.png',
+    'images/12.png',
+    'images/13.png',
+    'images/14.png',
+    'images/15.png',
+    // Control images
+    'images/backward.png',
+    'images/forward.png',
+    // Audio files
+    'audio/narration.mp3',
+    'audio/scene1.mp3',
+    'audio/scene2.mp3',
+    'audio/scene3.mp3',
+    'audio/scene4.mp3',
+    'audio/scene6.mp3',
+    'audio/choice.mp3',
+    'audio/A1.mp3',
+    'audio/A2.mp3',
+    'audio/scene9.mp3',
+    'audio/B1.mp3',
+    'audio/B2.mp3',
+    'audio/scene13.mp3'
+];
+
+// Create loading screen
+function createLoadingScreen() {
+    const loadingScreen = document.createElement('div');
+    loadingScreen.id = 'loading-screen';
+    loadingScreen.innerHTML = '<div class="loading-text">Loading</div>';
+    document.body.appendChild(loadingScreen);
+}
+
+// Function to preload images
+function preloadImage(src) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error(`Failed to load image: ${src}`));
+        img.src = src;
+    });
+}
+
+// Function to preload audio
+function preloadAudio(src) {
+    return new Promise((resolve, reject) => {
+        const audio = new Audio();
+        audio.oncanplaythrough = () => resolve(audio);
+        audio.onerror = () => reject(new Error(`Failed to load audio: ${src}`));
+        audio.src = src;
+    });
+}
+
+// Function to preload all assets
+async function preloadAllAssets() {
+    const promises = assetsToPreload.map(src => {
+        if (src.endsWith('.mp3')) {
+            return preloadAudio(src);
+        } else {
+            return preloadImage(src);
+        }
+    });
+
+    try {
+        await Promise.all(promises);
+        document.getElementById('loading-screen').classList.add('hidden');
+        document.querySelector('.container').classList.remove('hidden');
+    } catch (error) {
+        console.error('Error preloading assets:', error);
+        // Handle error appropriately
+    }
+}
+
 let currentSceneIndex = 0;
 let isTransitioning = false;
 let currentAudio = null;
-
-// Add visited scenes tracking
 let visitedScenes = new Set();
+
+// Initialize the game
+async function initializeGame() {
+    createLoadingScreen();
+    document.querySelector('.container').classList.add('hidden');
+    await preloadAllAssets();
+    updateSceneContent();
+}
 
 // Get the elements
 const forwardButton = document.querySelector('img[alt="Forward button"]');
@@ -418,4 +509,7 @@ updateSceneContent();
 
 // Add click event listeners
 forwardButton.addEventListener('click', () => changeScene('forward'));
-backwardButton.addEventListener('click', () => changeScene('backward')); 
+backwardButton.addEventListener('click', () => changeScene('backward'));
+
+// Initialize the game when the window loads
+window.addEventListener('load', initializeGame); 
