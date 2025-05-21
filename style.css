@@ -16,21 +16,19 @@ body {
 
 /* Container to maintain aspect ratio */
 .container {
-    width: 1920px;
-    height: 1080px;
     position: relative;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    transform-origin: center;
-    transform: scale(var(--scale-factor, 1));
 }
 
 .background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -61,12 +59,14 @@ body.fade::before {
     bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
-    width: 1520px;
+    width: 100%;
+    max-width: 1520px;
     text-align: center;
     color: white;
     z-index: 2;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     transition: opacity 0.5s ease-in-out;
+    box-sizing: border-box;
 }
 
 .story-content.fade {
@@ -92,7 +92,8 @@ body.fade::before {
     min-height: 2.8em;
     white-space: pre-wrap;
     color: #666; /* Default grey color */
-    width: 1520px;
+    width: 100%;
+    max-width: 1520px;
     margin-left: auto;
     margin-right: auto;
     background: rgba(0, 0, 0, 0.4);
@@ -101,6 +102,10 @@ body.fade::before {
     padding: 20px 40px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    word-break: keep-all;
+    overflow-wrap: normal;
+    hyphens: none;
 }
 
 .scene-description.typewriter {
@@ -162,10 +167,10 @@ body.fade::before {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 960px;
+    position: fixed;
+    bottom: 30px;
     right: 30px;
-    z-index: 2;
+    z-index: 1000;
 }
 
 .control img {
@@ -173,6 +178,8 @@ body.fade::before {
     height: 50px;
     cursor: pointer;
     transition: transform 0.2s ease, opacity 0.3s ease;
+    position: relative;
+    z-index: 1001;
 }
 
 .control img:hover {

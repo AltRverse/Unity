@@ -19,11 +19,11 @@ const gameScenes = [
         showBackward: true,
         audio: 'audio/narration.mp3',
         useTypewriter: true,
-        typewriterSpeed: 35  // Speed in milliseconds (lower = faster)
+        typewriterSpeed: 30  // Speed in milliseconds (lower = faster)
     },
     {
         id: 3,
-        description: "Welcome stranger, I see you! My name is Kakbhushundi. I am a devotee of Shree Ram. Don't be startled by my looks, my appearance is because of a curse due to my arrogance and pride.",
+        description: "Welcome stranger, I see you! My name is Kakbhushundi. I am a devotee of Shree Ram. Don't be      startled by my looks, my appearance is because of a curse due to my arrogance and pride.",
         image: '2.png',
         showControls: true,
         showForward: true,
@@ -34,7 +34,7 @@ const gameScenes = [
     },
     {
         id: 4,
-        description: "But this curse became a step in my spiritual evolution, when I renounced my ego and embraced total devotion to Shree Ram. Moved by my unwavering devotion, Shree Ram granted me immortality and divine knowledge allowing me to see events that have already occurred and that would occur in the future, across different universes.",
+        description: "But this curse became a step in my spiritual evolution, when I renounced my ego and embraced total devotion to Shree Ram. Moved by my unwavering devotion, Shree Ram granted me immortality and divine knowledge allowing me to see events that have already occurred and that would occur in the    future, across different universes.",
         image: '3.png',
         showControls: true,
         showForward: true,
@@ -45,7 +45,7 @@ const gameScenes = [
     },
     {
         id: 5,
-        description: "I have witnessed Mahabharat not once, but sixteen times across different universes with different outcomes. Each time, the great war unfolds with subtle variations, yet one truth remains constant: destiny is a force not easily turned.",
+        description: "I have witnessed Mahabharat not once, but sixteen times across different universes with different outcomes. Each time, the great war unfolds with subtle variations, yet one truth remains constant:  destiny is a force not easily turned.",
         image: '4.png',
         showControls: true,
         showForward: true,
@@ -56,7 +56,7 @@ const gameScenes = [
     },
     {
         id: 6,
-        description: "While I watched Mahabharat across timeline and universes, I stood at a pivotal moment in one of the universe, where I have traveled to a timeline where I must choose how to guide the Pandavs to win the battle of Kurukshetra.",
+        description: "While I watched Mahabharat across timeline and universes, I stood at a pivotal moment in one of the universe, where I have traveled to a timeline where I must choose how to guide the Pandavs to win  the battle of Kurukshetra.",
         image: '5.png',
         showControls: true,
         showForward: true,
@@ -65,7 +65,7 @@ const gameScenes = [
         useTypewriter: true,
         typewriterSpeed: 30
     },
-    {
+    /*{
         id: 7,
         description: "What should I have done?",
         image: '6.png',
@@ -76,7 +76,7 @@ const gameScenes = [
         useTypewriter: true,
         typewriterSpeed: 10
         
-    },
+    },*/
     {
         id: 8,
         description: "What should I have done?",
@@ -88,7 +88,9 @@ const gameScenes = [
         choices: [
             { text: "Should I advise the Pandavas to prevent war and guide them toward peace over bloodshed?", nextScene: 9 },
             { text: "Or should I let destiny unfold as it must? For I have seen that the war may be inevitable", nextScene: 13 }
-        ]
+        ],
+        useTypewriter: true,
+        typewriterSpeed: 10,
     },
     {
         id: 9,
@@ -205,7 +207,7 @@ const assetsToPreload = [
     'audio/scene2.mp3',
     'audio/scene3.mp3',
     'audio/scene4.mp3',
-    'audio/scene6.mp3',
+    //'audio/scene6.mp3',
     'audio/choice.mp3',
     'audio/A1.mp3',
     'audio/A2.mp3',
@@ -295,26 +297,6 @@ function playNarration(audioPath) {
         console.log('Audio playback failed:', error);
     });
 }
-
-// Function to update scale
-function updateScale() {
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    const containerWidth = 1920;
-    const containerHeight = 1080;
-    
-    const scaleX = windowWidth / containerWidth;
-    const scaleY = windowHeight / containerHeight;
-    const scale = Math.min(scaleX, scaleY);
-    
-    container.style.setProperty('--scale-factor', scale);
-}
-
-// Initial scale
-updateScale();
-
-// Update scale on window resize
-window.addEventListener('resize', updateScale);
 
 // Function to handle scene transition
 function handleSceneTransition(newSceneIndex) {
